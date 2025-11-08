@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;500;700&display=swap');
+
+@font-face {
+    font-family: 'Digital Pixel';
+    src: url('fonts/DigitalPixelV124-Regular.otf') format('opentype');
+}
+
+body {
+    background-color: #120F1A;
+    background-image: url("images/pictuers/Background_2.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+    background-attachment: scroll;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 14px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 15px;
+    background-color: #1B1B1B;
+    margin-top: 40px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 1720px;
+    box-sizing: border-box;
+    border: 1px solid #40403F;
+    max-height: 60px;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 20px;
+    margin: 15px 30px 15px 10px;
+    color: white;
+    font-family: 'Digital Pixel', sans-serif;
+    font-weight: 400;
+}
+
+.left a {
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.left a:hover {
+    color: white;
+}
+
+.right button {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.right button:nth-child(1) {
+    background: #333333;
+    color: white;
+    box-sizing: border-box;
+    border: 1px solid #40403F;
+}
+
+.right button:nth-child(2) {
+    background: #FFFFFF;
+    color: #1B1B1B;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 180px;
+    width: 100%;
+    margin-bottom: 250px;
+}
+
+.content h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: 'Digital Pixel', sans-serif;
+    font-weight: 400;
+}
+
+.content .subtitle {
+    font-size: 15px;
+    color: #E3D8EF;
+    margin-bottom: 40px;
+    margin-top: -12px;
+    font-weight: normal;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    min-height: 60px;
+    display: flex;
+    align-items: flex-end;
+    background: #272725;
+    border: 1px solid #40403F;
+    border-radius: 30px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    padding: 10px 20px 10px 25px;
+    box-sizing: border-box;
+}
+
+.input-container:focus-within {
+    border-color: #7300ff;
+    box-shadow: 0 0 5px rgba(102, 0, 255, 0.5);
+}
+
+.input-container textarea {
+    flex: 1;
+    resize: none;
+    overflow-y: hidden;
+    line-height: 1.4;
+    transition: height 0.1s ease;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    margin-right: 10px;
+    color: white;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    scrollbar-color: #92918F transparent;
+    -ms-overflow-style: none;
+}
+
+.input-container textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.input-container textarea::placeholder {
+    color: #8A8A9A;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.input-container button {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    background: #92918F;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.input-container button img {
+    width: 16px;
+    height: 16px;
+}
+
+.postscript {
+    font-size: 12px;
+    color: #E3D8EF;
+}
+
+.input-container textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.input-container textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.input-container textarea::-webkit-scrollbar-thumb {
+    background-color: #92918F;
+    border-radius: 4px;
+}
+
+.input-container textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+}
+
+
+/* --- СТИЛІ ДЛЯ ФЕЙКОВОГО СЛАЙДЕРА КУРСІВ --- */
+
+.courses-section {
+    width: 90%;
+    max-width: 1720px;
+    margin: 100px auto 60px auto;
+    background-color: #1B1B1B;
+    border: 1px solid #40403F;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 30px 50px 40px 50px;
+}
+
+.courses-title {
+    font-size: 20px;
+    font-weight: 200;
+    color: #ffffff;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.slider-container {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-card {
+    background-color: #1A1923;
+    border-radius: 16px;
+    border: 1px solid #2C2C34;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 23.5%;
+    aspect-ratio: 1.6 / 1;
+}
+
+.course-card .card-content-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #40403F;
+}
+
+.dot.active {
+    background-color: #FFFFFF;
+}

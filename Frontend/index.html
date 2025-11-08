@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPixels</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <h1 class="logo">EduPixels</h1>
+            <a href="#">Спільнота</a>
+            <a href="#">Ціни</a>
+        </div>
+
+        <div class="right">
+            <button>Log in</button>
+            <button>Get started</button>
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Навчайся з ШІ</h1>
+        <p class="subtitle">ШІ збере твій курс по пікселях — швидко, розумно, красиво.</p>
+
+        <div class="input-container">
+            <textarea placeholder="Напишіть, що ви хочете вивчити" rows="1"></textarea>
+            <button><img src="images/icons/Vector.svg" alt=""></button>
+        </div>
+
+        <p class="postscript">*Безкоштовно можна згенерувати лише один курс.</p>
+    </main>
+
+
+    <section class="courses-section">
+        <h2 class="courses-title">Курси від EduPixels:</h2>
+
+        <div class="slider-container">
+
+            <div class="course-card">
+                <img src="images/pictuers/b6b30b1e-8767-4e52-9163-fed7bb131fdc 1.png" alt="JavaScript Course"
+                    class="card-content-image">
+            </div>
+
+            <div class="course-card">
+                <img src="images/pictuers/REACT_COURSE.png" alt="React Course" class="card-content-image">
+            </div>
+
+            <div class="course-card">
+                <img src="images/pictuers/NEXT_JS_COURSE.png" alt="Next.js Course" class="card-content-image">
+            </div>
+
+            <div class="course-card">
+                <img src="images/pictuers/PYTHON_COURSE.png" alt="Python Course" class="card-content-image">
+            </div>
+
+        </div>
+
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+
+    <script>
+        const textarea = document.querySelector('.input-container textarea');
+        const maxLines = 3;
+        const lineHeight = parseFloat(getComputedStyle(textarea).lineHeight) || (14 * 1.4); // fallback to 14px * 1.4
+        const paddingTop = parseFloat(getComputedStyle(textarea).paddingTop);
+        const paddingBottom = parseFloat(getComputedStyle(textarea).paddingBottom);
+        const maxHeight = (maxLines * lineHeight) + paddingTop + paddingBottom;
+
+        function autoResize() {
+            textarea.style.height = 'auto';
+            const scrollHeight = textarea.scrollHeight;
+            if (scrollHeight > maxHeight) {
+                textarea.style.height = `${maxHeight}px`;
+                textarea.style.overflowY = 'auto'; // Показуємо scroll лише після 3 рядків
+            } else {
+                textarea.style.height = `${scrollHeight}px`;
+                textarea.style.overflowY = 'hidden'; // Ховаємо scroll, якщо менше 3 рядків
+            }
+        }
+
+        textarea.addEventListener('input', autoResize);
+        autoResize();
+    </script>
+</body>
+
+</html>
