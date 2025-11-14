@@ -40,22 +40,48 @@
 
         <div class="slider-container">
 
-            <div class="course-card">
-                <img src="images/pictuers/b6b30b1e-8767-4e52-9163-fed7bb131fdc 1.png" alt="JavaScript Course"
-                    class="card-content-image">
+            <button class="slider-button button_left" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="courses-wrapper">
+                <div class="course-card">
+                    <img src="images/pictuers/b6b30b1e-8767-4e52-9163-fed7bb131fdc 1.png" alt="JavaScript Course"
+                        class="card-content-image">
+                </div>
+                <div class="course-card">
+                    <img src="images/pictuers/REACT_COURSE.png" alt="React Course" class="card-content-image">
+                </div>
+                <div class="course-card">
+                    <img src="images/pictuers/NEXT_JS_COURSE.png" alt="Next.js Course" class="card-content-image">
+                </div>
+                <div class="course-card">
+                    <img src="images/pictuers/PYTHON_COURSE.png" alt="Python Course" class="card-content-image">
+                </div>
+                <div class="course-card">
+                    <img src="images/pictuers/b6b30b1e-8767-4e52-9163-fed7bb131fdc 1.png" alt="JavaScript Course"
+                        class="card-content-image">
+                </div>
+                <div class="course-card">
+                    <img src="images/pictuers/REACT_COURSE.png" alt="React Course" class="card-content-image">
+                </div>
+                <div class="course-card">
+                    <img src="images/pictuers/NEXT_JS_COURSE.png" alt="Next.js Course" class="card-content-image">
+                </div>
+                <div class="course-card">
+                    <img src="images/pictuers/PYTHON_COURSE.png" alt="Python Course" class="card-content-image">
+                </div>
             </div>
 
-            <div class="course-card">
-                <img src="images/pictuers/REACT_COURSE.png" alt="React Course" class="card-content-image">
-            </div>
-
-            <div class="course-card">
-                <img src="images/pictuers/NEXT_JS_COURSE.png" alt="Next.js Course" class="card-content-image">
-            </div>
-
-            <div class="course-card">
-                <img src="images/pictuers/PYTHON_COURSE.png" alt="Python Course" class="card-content-image">
-            </div>
+            <button class="slider-button button_right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
 
         </div>
 
@@ -64,33 +90,13 @@
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
+            <span class="dot"></span>
+
         </div>
     </section>
 
 
-    <script>
-        const textarea = document.querySelector('.input-container textarea');
-        const maxLines = 3;
-        const lineHeight = parseFloat(getComputedStyle(textarea).lineHeight) || (14 * 1.4); // fallback to 14px * 1.4
-        const paddingTop = parseFloat(getComputedStyle(textarea).paddingTop);
-        const paddingBottom = parseFloat(getComputedStyle(textarea).paddingBottom);
-        const maxHeight = (maxLines * lineHeight) + paddingTop + paddingBottom;
-
-        function autoResize() {
-            textarea.style.height = 'auto';
-            const scrollHeight = textarea.scrollHeight;
-            if (scrollHeight > maxHeight) {
-                textarea.style.height = `${maxHeight}px`;
-                textarea.style.overflowY = 'auto'; // Показуємо scroll лише після 3 рядків
-            } else {
-                textarea.style.height = `${scrollHeight}px`;
-                textarea.style.overflowY = 'hidden'; // Ховаємо scroll, якщо менше 3 рядків
-            }
-        }
-
-        textarea.addEventListener('input', autoResize);
-        autoResize();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

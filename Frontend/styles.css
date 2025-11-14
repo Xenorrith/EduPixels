@@ -7,7 +7,7 @@
 
 body {
     background-color: #120F1A;
-    background-image: url("images/pictuers/Background_2.png");
+    background-image: url("images/pictuers/Background.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: top center;
@@ -126,8 +126,8 @@ body {
 }
 
 .input-container:focus-within {
-    border-color: #7300ff;
-    box-shadow: 0 0 5px rgba(102, 0, 255, 0.5);
+    border-color: #e3e3e3;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .input-container textarea {
@@ -202,7 +202,7 @@ body {
 }
 
 
-/* --- СТИЛІ ДЛЯ ФЕЙКОВОГО СЛАЙДЕРА КУРСІВ --- */
+/* --- СТИЛІ ДЛЯ СЛАЙДЕРА КУРСІВ (ОНОВЛЕНО) --- */
 
 .courses-section {
     width: 90%;
@@ -226,7 +226,22 @@ body {
 .slider-container {
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.courses-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.courses-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .course-card {
@@ -235,7 +250,8 @@ body {
     border: 1px solid #2C2C34;
     box-sizing: border-box;
     overflow: hidden;
-    width: 23.5%;
+    width: calc((100% - 60px) / 4);
+    flex-shrink: 0;
     aspect-ratio: 1.6 / 1;
 }
 
@@ -244,6 +260,65 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+/* --- ОНОВЛЕНІ СТИЛІ ДЛЯ КНОПОК-СТРІЛОК --- */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    /* !!! ЗМІНА ТУТ: Фон і рамка прибрані */
+    background: transparent;
+    border: none;
+    padding: 0;
+    /* Додано для SVG */
+    /* !!! ЗМІНА ТУТ: Колір тепер для SVG */
+    color: white;
+
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* !!! НОВИЙ СТИЛЬ: Розмір SVG всередині кнопки */
+.slider-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.button_left {
+    left: 15px;
+}
+
+.button_right {
+    right: 15px;
+}
+
+.slider-container:hover .slider-button {
+    opacity: 1;
+}
+
+.slider-button:hover {
+    /* Легкий фон при наведенні для фідбеку */
+    background: rgba(60, 60, 60, 0.5);
+}
+
+.slider-button:disabled {
+    /* !!! ЗМІНА ТУТ: Фон прибраний */
+    background: transparent;
+    opacity: 0.2 !important;
+    cursor: not-allowed;
+}
+
 
 .slider-dots {
     display: flex;
@@ -257,6 +332,8 @@ body {
     height: 8px;
     border-radius: 50%;
     background-color: #40403F;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .dot.active {
